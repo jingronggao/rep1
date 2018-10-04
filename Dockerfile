@@ -6,12 +6,13 @@
 FROM websphere-liberty:webProfile7
 
 
-RUN curl -o /tmp/app.war -SL http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war
-RUN mv /tmp/app.war /config/dropins/
-
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/
+
+ADD http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /config/dropins/
+
+RUN ls -la /config/dropins/
 
 
 #FEATURES: Install any features that are required

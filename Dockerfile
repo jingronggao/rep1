@@ -5,9 +5,9 @@
 #IMAGE: Get the base image for Liberty
 FROM websphere-liberty:webProfile7
 
-RUN mkdir -p /usr/src/things \
-    && curl -SL http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war \
-RUN mv /usr/src/things/modresorts-1.0.war /config/dropins/
+
+RUN curl -o /tmp/app.war -SL http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war
+RUN mv /tmp/app.war /config/dropins/
 
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config

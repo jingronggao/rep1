@@ -12,7 +12,7 @@ RUN ls -la ./
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/
-COPY ./modresorts-1.0.war /config/dropins/
+COPY ../../../../../modresorts-1.0.war /config/dropins/
 RUN ls -la /config/dropins/
 
 

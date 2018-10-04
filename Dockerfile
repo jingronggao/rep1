@@ -5,6 +5,10 @@
 #IMAGE: Get the base image for Liberty
 FROM websphere-liberty:webProfile7
 
+ADD http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /root/
+RUN pwd
+RUN ls -la /root/
+
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 COPY ./binary/application/* /config/dropins/

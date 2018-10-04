@@ -10,7 +10,7 @@ FROM websphere-liberty:webProfile7
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/
 
-ADD http://9.26.42.227:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /config/dropins/
+ADD http://9.26.41.55:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /config/dropins/
 
 RUN ls -la /config/dropins/
 

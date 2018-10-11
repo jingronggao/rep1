@@ -45,9 +45,6 @@
                </goals>
                <configuration>
                   <executable>hostname</executable>
-                  <arguments>
-                    <argument></argument>
-                  </arguments>
                 </configuration>
               </execution>
            </executions>

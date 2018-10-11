@@ -35,9 +35,6 @@
                </goals>
                <configuration>
                   <executable>pwd</executable>
-                  <arguments>
-                    <argument></argument>
-                  </arguments>
                 </configuration>
               </execution>
               <execution>

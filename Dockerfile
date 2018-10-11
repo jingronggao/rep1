@@ -8,11 +8,13 @@ FROM websphere-liberty:webProfile7
 
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
+ls ./binary/application
+find / -name modresorts.war
 #COPY ./binary/application/* /config/dropins/
 
-ADD http://9.26.41.55:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /config/dropins/
+#ADD http://9.26.41.55:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war /config/dropins/
 
-RUN ls -la /config/dropins/
+#RUN ls -la /config/dropins/
 
 
 #FEATURES: Install any features that are required

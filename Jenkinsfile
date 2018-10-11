@@ -6,6 +6,6 @@
 @Library('MicroserviceBuilder') _
 microserviceBuilderPipeline {
     image = 'modresortswar'
-    mvnCommands = '--version'
+    mvnCommands = 'org.apache.maven.plugins:maven-dependency-plugin:2.4:get -DrepoUrl=http://localhost:9666 -Dartifact=com.ibm.ta:modresorts:1.0:war -Ddest=./binary/application/modresorts.war'
     test='false'
 }

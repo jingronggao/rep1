@@ -34,7 +34,7 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>pwd</executable>
+                  <executable>hostname</executable>
                 </configuration>
               </execution>
               <execution>
@@ -44,7 +44,10 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>hostname</executable>
+                  <executable>ls</executable>
+                  <arguments>
+                    <argument>/</argument>
+                  </arguments>
                 </configuration>
               </execution>
            </executions>

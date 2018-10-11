@@ -8,7 +8,7 @@ FROM websphere-liberty:webProfile7
 
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
-RUN ls .
+RUN ls /tmp/
 RUN hostname
 RUN pwd
 RUN find / -name modresorts.war

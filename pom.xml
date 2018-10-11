@@ -46,7 +46,7 @@
                <configuration>
                   <executable>ls</executable>
                   <arguments>
-                    <argument>/</argument>
+                    <argument>/tmp/</argument>
                   </arguments>
                 </configuration>
               </execution>

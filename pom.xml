@@ -34,9 +34,9 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>find</executable>
+                  <executable>pwd</executable>
                   <arguments>
-                    <argument>/ -name modresorts.war</argument>
+                    <argument></argument>
                   </arguments>
                 </configuration>
               </execution>

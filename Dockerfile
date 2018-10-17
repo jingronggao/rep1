@@ -12,7 +12,8 @@ COPY ./binary/application/* /config/dropins/
 
 #FEATURES: Install any features that are required
 RUN apt-get update && apt-get dist-upgrade -y \
-&& rm -rf /var/lib/apt/lists/*
+RUN ls /var/lib/apt/lists/
+#RUN rm -rf /var/lib/apt/lists/*
 RUN /opt/ibm/wlp/bin/installUtility install  --acceptLicense \
 	jsp-2.3 \
 	servlet-3.1; exit 0

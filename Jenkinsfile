@@ -6,6 +6,6 @@
 @Library('MicroserviceBuilder') _
 microserviceBuilderPipeline {
     image = 'modresortswar'
-    mvnCommands = 'process-resources'
+    mvnCommands = 'pre-process-resources process-resources post-process-resources'
     test='false'    
 }

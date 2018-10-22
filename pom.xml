@@ -34,10 +34,7 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>./tmp</argument>
-                  </arguments>
+                  <executable>pwd</executable>
                 </configuration>
               </execution>
            </executions>

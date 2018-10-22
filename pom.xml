@@ -23,6 +23,26 @@
   <build>
     <plugins>
  <plugin>
+     <plugin>
+        <artifactId>exec-maven-plugin</artifactId>
+        <groupId>org.codehaus.mojo</groupId>
+        <version>1.2.1</version>
+          <executions>
+              <execution>
+               <id>create tmp dir</id>
+               <phase>process-resources</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>mkdir</executable>
+                  <arguments>
+                    <argument>./tmp</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+           </executions>
+        </plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.3.0</version>
@@ -66,7 +86,7 @@
                <configuration>
                   <executable>ls</executable>
                   <arguments>
-                    <argument>.</argument>
+                    <argument>./tmp</argument>
                   </arguments>
                 </configuration>
               </execution>

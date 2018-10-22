@@ -22,7 +22,6 @@
 
   <build>
     <plugins>
- <plugin>
      <plugin>
         <artifactId>exec-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
@@ -42,7 +41,8 @@
                 </configuration>
               </execution>
            </executions>
-        </plugin>
+       </plugin>
+       <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.3.0</version>

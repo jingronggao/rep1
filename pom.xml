@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
  
-  <groupId>com.modresortswar_org.app</groupId>
-  <artifactId>modresortswar</artifactId>
+  <groupId>com.ibm.ta</groupId>
+  <artifactId>taMigration</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
  
-  <name>modresortswar</name>
+  <name>taMigration</name>
  
   <dependencies>
     <dependency>
@@ -75,21 +75,6 @@
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 1</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>ls</executable>
-                  <arguments>
-                    <argument>-d</argument>
-                    <argument>-1</argument>
-                    <argument>${project.build.directory}/*.*</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-              <execution>
                <id>check downloaded file 2</id>
                <phase>verify</phase>
                <goals>
@@ -101,6 +86,20 @@
                     <argument>/home/jenkins/workspace/</argument>
                     <argument>-name</argument>
                     <argument>modresorts-1.0.war</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+               <id>mv downloaded file</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>cp </executable>
+                  <arguments>
+                    <argument>${project.build.directory}/modresorts-1.0.war</argument>
+                    <argument>.</argument>
                   </arguments>
                 </configuration>
               </execution>

@@ -57,7 +57,7 @@
               <url>http://9.26.42.226:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war</url>
               <outputFileName>modresorts-1.0.war</outputFileName>
               <!-- default target location, just to demonstrate the parameter -->
-              <outputDirectory>${project.build.directory}</outputDirectory>
+              <outputDirectory>./tmp</outputDirectory>
             </configuration>
           </execution>
         </executions>

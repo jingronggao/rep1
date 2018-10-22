@@ -62,36 +62,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <artifactId>exec-maven-plugin</artifactId>
-        <groupId>org.codehaus.mojo</groupId>
-        <version>1.2.1</version>
-          <executions>
-            <execution>
-               <id>My Command Runner 1</id>
-               <phase>process-resources</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>pwd</executable>
-                </configuration>
-              </execution>
-              <execution>
-               <id>My Command Runner 2</id>
-               <phase>process-resources</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>ls</executable>
-                  <arguments>
-                    <argument>./tmp</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-           </executions>
-        </plugin>
     </plugins>
   </build>
 </project>

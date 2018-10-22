@@ -5,7 +5,8 @@
 #IMAGE: Get the base image for Liberty
 FROM websphere-liberty:webProfile7
 
-RUN find / -name wlp
+RUN ls /opt/ibm/wlp
+RUN ls /etc/wlp
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/

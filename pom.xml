@@ -37,19 +37,6 @@
                   <executable>pwd</executable>
                 </configuration>
               </execution>
-              <execution>
-               <id>create tmp dir under current dir</id>
-               <phase>initialize</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>./tmp</argument>
-                  </arguments>
-                </configuration>
-              </execution>
            </executions>
        </plugin>
        <plugin>

@@ -84,7 +84,7 @@
                   <executable>cp</executable>
                   <arguments>
                     <argument>${project.build.directory}/modresorts-1.0.war</argument>
-                    <argument>./tmp</argument>
+                    <argument>.</argument>
                   </arguments>
                 </configuration>
               </execution>
@@ -113,7 +113,20 @@
                   <executable>ls</executable>
                   <arguments>
                     <argument>-la</argument>
-                    <argument>./tmp/modresorts-1.0.war</argument>
+                    <argument>${project.build.directory}/modresorts-1.0.war</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+                             <id>check downloaded file 3</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>ls</executable>
+                  <arguments>
+                    <argument>-la</argument>
+                    <argument>./modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>

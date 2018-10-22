@@ -29,7 +29,7 @@
           <executions>
               <execution>
                <id>create tmp dir</id>
-               <phase>pre-process-resources</phase>
+               <phase>initialize</phase>
                <goals>
                   <goal>exec</goal>
                </goals>
@@ -69,7 +69,7 @@
           <executions>
             <execution>
                <id>check current dir</id>
-               <phase>post-process-resources</phase>
+               <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
                </goals>
@@ -79,7 +79,7 @@
               </execution>
               <execution>
                <id>check downloaded file 1</id>
-               <phase>post-process-resources</phase>
+               <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
                </goals>
@@ -94,7 +94,7 @@
               </execution>
               <execution>
                <id>check downloaded file 2</id>
-               <phase>post-process-resources</phase>
+               <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
                </goals>

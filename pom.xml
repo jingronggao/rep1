@@ -54,7 +54,7 @@
               <url>http://9.26.42.226:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war</url>
               <outputFileName>modresorts-1.0.war</outputFileName>
               <!-- default target location, just to demonstrate the parameter -->
-              <outputDirectory>./tmp</outputDirectory>
+              <outputDirectory>${project.build.directory}</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -81,11 +81,11 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>find</executable>
+                  <executable>ls</executable>
                   <arguments>
-                    <argument>${project.build.directory}</argument>
-                    <argument>-name</argument>
-                    <argument>modresorts-1.0.war</argument>
+                    <argument>-d</argument>
+                    <argument>-1</argument>
+                    <argument>${project.build.directory}/*.*</argument>
                   </arguments>
                 </configuration>
               </execution>
@@ -98,7 +98,7 @@
                <configuration>
                   <executable>find</executable>
                   <arguments>
-                    <argument>/</argument>
+                    <argument>/home/jenkins/workspace/</argument>
                     <argument>-name</argument>
                     <argument>modresorts-1.0.war</argument>
                   </arguments>

@@ -5,14 +5,17 @@
 #IMAGE: Get the base image for Liberty
 FROM websphere-liberty:webProfile7
 
-RUN ls /opt/ibm/wlp
-RUN ls /etc/wlp
-RUN ls .
-RUN ls /
-#BINARIES: Add in all necessary application binaries
+
 COPY ./server.xml /config
+
+#BINARIES: Add in all necessary application binaries
 #COPY ./binary/application/* /config/dropins/
 COPY modresorts-1.0.war /config/dropins/
+
+#TODO: download DB2 driver $LIBERTY_HOME/wlp/usr/shared/resources/db2
+RUN ls /opt/ibm/wlp/usr/  
+
+#TODO: download MQ driver
 
 #FEATURES: Install any features that are required
 RUN apt-get update && apt-get dist-upgrade -y \

@@ -22,30 +22,12 @@
 
   <build>
     <plugins>
-     <plugin>
-        <artifactId>exec-maven-plugin</artifactId>
-        <groupId>org.codehaus.mojo</groupId>
-        <version>1.2.1</version>
-          <executions>
-              <execution>
-               <id>check current dir</id>
-               <phase>initialize</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>pwd</executable>
-                </configuration>
-              </execution>
-           </executions>
-       </plugin>
        <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.4.1</version>
         <executions>
           <execution>
-            <!-- the wget goal actually binds itself to this phase by default -->
             <phase>process-resources</phase>
             <goals>
               <goal>wget</goal>
@@ -53,7 +35,7 @@
             <configuration>
               <url>http://9.26.42.226:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war</url>
               <outputFileName>modresorts-1.0.war</outputFileName>
-              <!-- default target location, just to demonstrate the parameter -->
+              <!-- download to the workspace target dir -->
               <outputDirectory>${project.build.directory}</outputDirectory>
             </configuration>
           </execution>
@@ -64,18 +46,8 @@
         <groupId>org.codehaus.mojo</groupId>
         <version>1.2.1</version>
           <executions>
-            <execution>
-               <id>check current dir</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>pwd</executable>
-                </configuration>
-              </execution>
               <execution>
-               <id>mv downloaded file</id>
+               <id>cp downloaded file to workspace dir</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -89,7 +61,7 @@
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 1</id>
+               <id>make sure file are downloaded to required dirs</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -104,7 +76,7 @@
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 2</id>
+               <id>make sure file size is correct in workspace target dir</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -118,7 +90,7 @@
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 3</id>
+               <id>make sure file size is correct in workspace dir</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>

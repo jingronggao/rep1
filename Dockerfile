@@ -8,7 +8,7 @@ FROM websphere-liberty:webProfile7
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/
-COPY ./tmp/modresorts.war /config/dropins/
+COPY ./modresorts.war /config/dropins/
 RUN find / -name wlp
 
 #FEATURES: Install any features that are required

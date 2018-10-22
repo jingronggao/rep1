@@ -7,5 +7,5 @@
 microserviceBuilderPipeline {
     image = 'modresortswar'
     mvnCommands = 'org.apache.maven.plugins:maven-dependency-plugin:2.4:get -DrepoUrl=http://9.26.42.226:9666 -Dartifact=com.ibm.ta:modresorts:1.0:war -Ddest=tmp/modresorts.war install'
-    test='false'
+    test='false'    
 }

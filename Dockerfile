@@ -8,7 +8,6 @@ FROM websphere-liberty:webProfile7
 RUN ls /opt/ibm/wlp
 RUN ls /etc/wlp
 RUN ls .
-RUN find . -name modresorts-1.0.war
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/

@@ -75,21 +75,6 @@
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 2</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>find</executable>
-                  <arguments>
-                    <argument>/home/jenkins/workspace/</argument>
-                    <argument>-name</argument>
-                    <argument>modresorts-1.0.war</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-              <execution>
                <id>mv downloaded file</id>
                <phase>verify</phase>
                <goals>
@@ -103,18 +88,18 @@
                   </arguments>
                 </configuration>
               </execution>
-            <execution>
-               <id>verify moved file</id>
+              <execution>
+               <id>check downloaded file 2</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>ls</executable>
+                  <executable>find</executable>
                   <arguments>
-                    <argument>-d</argument>
-                    <argument>-1</argument>
-                    <argument>$PWD/*.*</argument>
+                    <argument>/home/jenkins/workspace/</argument>
+                    <argument>-name</argument>
+                    <argument>modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>

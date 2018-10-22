@@ -28,13 +28,26 @@
         <version>1.2.1</version>
           <executions>
               <execution>
-               <id>create tmp dir</id>
+               <id>check current dir</id>
                <phase>initialize</phase>
                <goals>
                   <goal>exec</goal>
                </goals>
                <configuration>
                   <executable>pwd</executable>
+                </configuration>
+              </execution>
+              <execution>
+               <id>create tmp dir under current dir</id>
+               <phase>initialize</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>mkdir</executable>
+                  <arguments>
+                    <argument>./tmp</argument>
+                  </arguments>
                 </configuration>
               </execution>
            </executions>
@@ -81,15 +94,15 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>cp </executable>
+                  <executable>cp</executable>
                   <arguments>
                     <argument>${project.build.directory}/modresorts-1.0.war</argument>
-                    <argument>.</argument>
+                    <argument>./tmp</argument>
                   </arguments>
                 </configuration>
               </execution>
               <execution>
-               <id>check downloaded file 2</id>
+               <id>check downloaded file 1</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -100,6 +113,20 @@
                     <argument>/home/jenkins/workspace/</argument>
                     <argument>-name</argument>
                     <argument>modresorts-1.0.war</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+               <id>check downloaded file 2</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>ls</executable>
+                  <arguments>
+                    <argument>-la</argument>
+                    <argument>./tmp/modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>

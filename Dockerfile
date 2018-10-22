@@ -8,10 +8,11 @@ FROM websphere-liberty:webProfile7
 RUN ls /opt/ibm/wlp
 RUN ls /etc/wlp
 RUN ls .
+RUN ls /
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 #COPY ./binary/application/* /config/dropins/
-COPY ./modresorts.war /config/dropins/
+COPY ./tmp/modresorts.war /config/dropins/
 
 #FEATURES: Install any features that are required
 RUN apt-get update && apt-get dist-upgrade -y \

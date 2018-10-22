@@ -103,6 +103,21 @@
                   </arguments>
                 </configuration>
               </execution>
+            <execution>
+               <id>verify moved file</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>ls</executable>
+                  <arguments>
+                    <argument>-d</argument>
+                    <argument>-1</argument>
+                    <argument>$PWD/*.*</argument>
+                  </arguments>
+                </configuration>
+              </execution>
            </executions>
        </plugin>
     </plugins>

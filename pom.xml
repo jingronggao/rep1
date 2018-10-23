@@ -113,7 +113,7 @@
                   <executable>ls</executable>
                   <arguments>
                     <argument>-la</argument>
-                    <argument>./binary-modresorts-1.0.war</argument>
+                    <argument>./db2driver-db2jcc.jar</argument>
                   </arguments>
                 </configuration>
               </execution>

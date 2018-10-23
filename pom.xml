@@ -22,39 +22,6 @@
 
   <build>
     <plugins>
-      <plugin>
-        <artifactId>exec-maven-plugin</artifactId>
-        <groupId>org.codehaus.mojo</groupId>
-        <version>1.2.1</version>
-          <executions>
-              <execution>
-               <id>create dir for db2driver</id>
-               <phase>initialize</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>{project.build.directory}/db2driver</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-              <execution>
-               <id>create dir for application binary</id>
-               <phase>initialize</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>{project.build.directory}/binary</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-           </executions>
-       </plugin>
        <plugin>
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
@@ -93,8 +60,34 @@
         <groupId>org.codehaus.mojo</groupId>
         <version>1.2.1</version>
           <executions>
+          <execution>
+               <id>create dir for db2driver</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>mkdir</executable>
+                  <arguments>
+                    <argument>{project.build.directory}/db2driver</argument>
+                  </arguments>
+                </configuration>
+              </execution>
               <execution>
-               <id>cp downloaded file to workspace dir</id>
+               <id>create dir for application binary</id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>mkdir</executable>
+                  <arguments>
+                    <argument>{project.build.directory}/binary</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
+               <id>cp downloaded binary file to binary dir</id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -103,7 +96,7 @@
                   <executable>cp</executable>
                   <arguments>
                     <argument>${project.build.directory}/modresorts-1.0.war</argument>
-                    <argument>.</argument>
+                    <argument>${project.build.directory}/binary/</argument>
                   </arguments>
                 </configuration>
               </execution>

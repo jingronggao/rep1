@@ -75,6 +75,20 @@
                 </configuration>
               </execution>
               <execution>
+               <id>cp downloaded db2 driver file </id>
+               <phase>verify</phase>
+               <goals>
+                  <goal>exec</goal>
+               </goals>
+               <configuration>
+                  <executable>cp</executable>
+                  <arguments>
+                    <argument>${project.build.directory}/db2driver-db2jcc.jar</argument>
+                    <argument>${project.build.directory}/../</argument>
+                  </arguments>
+                </configuration>
+              </execution>
+              <execution>
                <id>make sure file are downloaded to required dirs</id>
                <phase>verify</phase>
                <goals>

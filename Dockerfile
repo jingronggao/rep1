@@ -11,9 +11,10 @@ COPY ./server.xml /config
 #BINARIES: Add in all necessary application binaries
 #COPY ./binary/application/* /config/dropins/
 COPY ./binary-modresorts-1.0.war /config/dropins/modresorts-1.0.war
+RUN ls /config/dropins/
 
 #TODO: download DB2 driver $LIBERTY_HOME/wlp/usr/shared/resources/db2
-RUN ls /opt/ibm/wlp/usr/shared
+RUN ls /opt/ibm/wlp/usr/shared/resources
 
 #TODO: download MQ driver
 

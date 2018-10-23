@@ -35,9 +35,9 @@
             </goals>
             <configuration>
               <url>http://9.108.121.139:9666/com/ibm/ta/modresorts/1.0/modresorts-1.0.war</url>
-              <outputFileName>modresorts-1.0.war</outputFileName>
+              <outputFileName>binary-modresorts-1.0.war</outputFileName>
               <!-- download to the workspace target dir -->
-              <outputDirectory>${project.build.directory}/binary</outputDirectory>
+              <outputDirectory>${project.build.directory}</outputDirectory>
             </configuration>
           </execution>
           <execution>
@@ -48,9 +48,9 @@
             </goals>
             <configuration>
               <url>http://9.108.121.139:9666/1267/db2jcc.jar</url>
-              <outputFileName>db2jcc.jar</outputFileName>
+              <outputFileName>db2driver-db2jcc.jar</outputFileName>
               <!-- download to the workspace target dir -->
-              <outputDirectory>${project.build.directory}/db2driver</outputDirectory>
+              <outputDirectory>${project.build.directory}</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -60,34 +60,8 @@
         <groupId>org.codehaus.mojo</groupId>
         <version>1.2.1</version>
           <executions>
-          <execution>
-               <id>create dir for db2driver</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>{project.build.directory}/db2driver</argument>
-                  </arguments>
-                </configuration>
-              </execution>
               <execution>
-               <id>create dir for application binary</id>
-               <phase>verify</phase>
-               <goals>
-                  <goal>exec</goal>
-               </goals>
-               <configuration>
-                  <executable>mkdir</executable>
-                  <arguments>
-                    <argument>{project.build.directory}/binary</argument>
-                  </arguments>
-                </configuration>
-              </execution>
-              <execution>
-               <id>cp downloaded binary file to binary dir</id>
+               <id>cp downloaded binary file </id>
                <phase>verify</phase>
                <goals>
                   <goal>exec</goal>
@@ -95,8 +69,8 @@
                <configuration>
                   <executable>cp</executable>
                   <arguments>
-                    <argument>${project.build.directory}/modresorts-1.0.war</argument>
-                    <argument>${project.build.directory}/binary/</argument>
+                    <argument>${project.build.directory}/binary-modresorts-1.0.war</argument>
+                    <argument>${project.build.directory}/../</argument>
                   </arguments>
                 </configuration>
               </execution>
@@ -111,7 +85,7 @@
                   <arguments>
                     <argument>/home/jenkins/workspace/</argument>
                     <argument>-name</argument>
-                    <argument>modresorts-1.0.war</argument>
+                    <argument>binary-modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>
@@ -125,7 +99,7 @@
                   <executable>ls</executable>
                   <arguments>
                     <argument>-la</argument>
-                    <argument>${project.build.directory}/modresorts-1.0.war</argument>
+                    <argument>${project.build.directory}/binary-modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>
@@ -139,7 +113,7 @@
                   <executable>ls</executable>
                   <arguments>
                     <argument>-la</argument>
-                    <argument>./modresorts-1.0.war</argument>
+                    <argument>./binary-modresorts-1.0.war</argument>
                   </arguments>
                 </configuration>
               </execution>

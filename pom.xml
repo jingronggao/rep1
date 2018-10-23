@@ -22,7 +22,7 @@
 
   <build>
     <plugins>
-    <plugin>
+      <plugin>
         <artifactId>exec-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
         <version>1.2.1</version>
@@ -61,6 +61,7 @@
         <version>1.4.1</version>
         <executions>
           <execution>
+            <id>download binary file</id>
             <phase>process-resources</phase>
             <goals>
               <goal>wget</goal>
@@ -73,6 +74,7 @@
             </configuration>
           </execution>
           <execution>
+             <id>download db2driver</id>
             <phase>process-resources</phase>
             <goals>
               <goal>wget</goal>

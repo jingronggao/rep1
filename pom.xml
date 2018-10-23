@@ -110,10 +110,11 @@
                   <goal>exec</goal>
                </goals>
                <configuration>
-                  <executable>ls</executable>
+                  <executable>find</executable>
                   <arguments>
-                    <argument>-la</argument>
-                    <argument>./db2driver-db2jcc.jar</argument>
+                    <argument>/home/jenkins/workspace/</argument>
+                    <argument>-name</argument>
+                    <argument>db2driver-db2jcc.jar</argument>
                   </arguments>
                 </configuration>
               </execution>

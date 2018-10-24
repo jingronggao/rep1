@@ -38,6 +38,8 @@
               <outputFileName>binary-modresorts-1.0.war</outputFileName>
               <!-- download to the workspace target dir -->
               <outputDirectory>${project.build.directory}</outputDirectory>
+              <username>testId</username>
+              <password>testPwd</password>
             </configuration>
           </execution>
           <execution>
@@ -51,6 +53,8 @@
               <outputFileName>db2driver-db2jcc.jar</outputFileName>
               <!-- download to the workspace target dir -->
               <outputDirectory>${project.build.directory}</outputDirectory>
+              <username>testId</username>
+              <password>testPwd</password>
             </configuration>
           </execution>
         </executions>

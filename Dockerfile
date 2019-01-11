@@ -15,7 +15,7 @@ RUN ls opt/ibm/wlp/usr/servers/defaultServer
 RUN whoami
 User root
 RUN mkdir -p /usr/shared/config/lib/global
-RUN chown défaut /usr/shared/config/lib/global
+RUN chown default /usr/shared/config/lib/global
 COPY ./binary/lib/* /usr/shared/config/lib/global/
 RUN ls -la /usr/shared/config/lib/global
 

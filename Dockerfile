@@ -14,7 +14,7 @@ COPY ./binary/lib/* /config/lib/
 User root
 RUN mkdir -p /usr/shared/config/lib/global
 RUN cp /config/lib/* /usr/shared/config/lib/global/
-chmod 755 /usr/shared/config/lib/global/*
+RUN chmod 755 /usr/shared/config/lib/global/*
 RUN ls -la /usr/shared/config/lib/global
 
 #FEATURES: Install any features that are required

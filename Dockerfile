@@ -10,6 +10,9 @@ COPY ./server.xml /config
 COPY ./binary/application/* /config/dropins/
 RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
+RUN ls /config/lib
+RUN ls opt/ibm/wlp/usr/servers/defaultServer
+RUN ls /usr/shared/config
 
 #FEATURES: Install any features that are required
 USER root

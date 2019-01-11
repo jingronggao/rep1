@@ -10,12 +10,14 @@ COPY ./server.xml /config
 COPY ./binary/application/* /config/dropins/
 RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
-RUN ls /config/lib
+RUN ls -la /config/lib
 RUN ls opt/ibm/wlp/usr/servers/defaultServer
 RUN whoami
+User root
 RUN mkdir -p /usr/shared/config/lib/global
+RUN chown défaut /usr/shared/config/lib/global
 COPY ./binary/lib/* /usr/shared/config/lib/global/
-RUN ls /usr/shared/config/lib/global
+RUN ls -la /usr/shared/config/lib/global
 
 #FEATURES: Install any features that are required
 USER root

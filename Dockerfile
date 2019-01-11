@@ -12,7 +12,7 @@ RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
 RUN ls /config/lib
 RUN ls opt/ibm/wlp/usr/servers/defaultServer
-RUN ls /usr/shared
+RUN ls /usr
 
 #FEATURES: Install any features that are required
 USER root

@@ -11,7 +11,7 @@ COPY ./binary/application/* /config/dropins/
 RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
 RUN ls -la /config/lib
-RUN ls opt/ibm/wlp/usr/servers/defaultServer
+RUN ls /opt/ibm/wlp/usr/servers/defaultServer
 RUN whoami
 User root
 RUN mkdir -p /usr/shared/config/lib/global

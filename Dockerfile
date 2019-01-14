@@ -13,8 +13,9 @@ COPY ./binary/lib/* /config/lib/
 USER root
 RUN ls /config/../
 RUN ls /config/../..
-RUN pwd /config/../../
+RUN pwd /config/../../shared
 RUN mkdir -p /config/../../shared/config/lib/global
+RUN ls /config/../../shared/config/lib/global/
 COPY ./binary/lib/* /config/../../shared/config/lib/global/
 RUN chmod 755 /config/../../shared/config/lib/global/*
 Run ls -la /opt/ibm/wlp/usr/shared/config/lib/global/

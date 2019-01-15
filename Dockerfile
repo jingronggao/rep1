@@ -8,6 +8,7 @@ FROM websphere-liberty:webProfile7
 #BINARIES: Add in all necessary application binaries
 COPY ./server.xml /config
 COPY Dockerfile ./binary/application/* /config/apps/
+RUN ls /config/apps
 RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
 USER root

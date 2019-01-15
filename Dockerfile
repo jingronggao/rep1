@@ -11,13 +11,13 @@ COPY Dockerfile ./binary/application/* /config/apps/
 RUN ls /config/apps
 RUN mkdir /config/lib
 COPY ./binary/lib/* /config/lib/
-#USER root
-#RUN mkdir -p /config/../../shared/config/lib/global
-#RUN cp /config/lib/* /config/../../shared/config/lib/global/
-#RUN chmod -R 755 /config/../../shared
-#Run ls -la /opt/ibm/wlp/usr/shared/config/lib/global/
-#RUN ls -la /config/../../shared/config/lib/global/
-#RUN ls -la /config/lib/
+USER root
+RUN mkdir -p /config/../../shared/config/lib/global
+RUN cp /config/lib/* /config/../../shared/config/lib/global/
+RUN chmod -R 755 /config/../../shared
+Run ls -la /opt/ibm/wlp/usr/shared/config/lib/global/
+RUN ls -la /config/../../shared/config/lib/global/
+RUN ls -la /config/lib/
 
 #FEATURES: Install any features that are required
 USER root

@@ -13,5 +13,6 @@ Tue Jan 15 11:06:59 EST 2019--><server>
 <!-- <variable name="DERBY_JDBC_DRIVER_PATH" value="${WAS_INSTALL_ROOT}/derby/lib"/> -->
 <variable name="DERBY_JDBC_DRIVER_PATH" value="/config/lib"/>
 <applicationManager autoExpand="true"/>
+<!-- location and type were missing and it caused context root not found error -->
 <application id="sender_war" location="sender.war" name="sender_war" type="war"/>
 </server>

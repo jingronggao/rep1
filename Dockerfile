@@ -14,7 +14,7 @@ RUN mkdir /config/lib
 RUN ls -la /config/apps
 COPY ./binary/lib/* /config/lib/
 RUN mkdir -p /config/../../shared/config/lib/global
-RUN cp Dockerfile /config/lib/* /config/../../shared/config/lib/global/
+RUN cp /config/lib/* /config/../../shared/config/lib/global/
 RUN cp /config/apps/Dockerfile /config/../../shared/config/lib/global/
 RUN ls /config/../../shared/config/lib/global/
 RUN chmod -R 755 /config/../../shared
